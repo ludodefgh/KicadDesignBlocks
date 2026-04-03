@@ -1,0 +1,11 @@
+# KiCad backups
+*-backups/
+
+# KiCad auto-save
+*.kicad_pcb-bak
+*.kicad_sch-bak
+*_autosave-*
+
+# OS
+.DS_Store
+Thumbs.db
