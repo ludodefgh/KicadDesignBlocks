@@ -2741,7 +2741,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "4678eb45-984e-44b9-9dc7-0a8bce7eb31b")
-		(property "Reference" "F10"
+		(property "Reference" "F8"
 			(at 227.33 63.5 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2815,7 +2815,7 @@
 		(instances
 			(project "TPS5430Buck"
 				(path "/abc0b92f-ec94-4587-a0dc-b6ae56d461f6"
-					(reference "F10")
+					(reference "F8")
 					(unit 1)
 				)
 			)
@@ -4459,7 +4459,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "ed8cb71d-a955-4d6c-8b22-2e4a4fbcbf92")
-		(property "Reference" "F9"
+		(property "Reference" "F7"
 			(at 102.87 63.5 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4533,7 +4533,7 @@
 		(instances
 			(project "TPS5430Buck"
 				(path "/abc0b92f-ec94-4587-a0dc-b6ae56d461f6"
-					(reference "F9")
+					(reference "F7")
 					(unit 1)
 				)
 			)

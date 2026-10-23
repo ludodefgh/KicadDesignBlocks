@@ -752,7 +752,7 @@
 		(at 63.8 58.2 -90)
 		(descr "Fuse SMD 1206 (3216 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: http://www.tortai-tech.com/upload/download/2011102023233369053.pdf)")
 		(tags "fuse")
-		(property "Reference" "F10"
+		(property "Reference" "F8"
 			(at 0 -1.83 90)
 			(layer "F.SilkS")
 			(uuid "8695f2f6-1e2f-42ea-91a1-7dbd04f454fc")
@@ -3464,7 +3464,7 @@
 		(at 66.766125 43.845095)
 		(descr "Fuse SMD 1206 (3216 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: http://www.tortai-tech.com/upload/download/2011102023233369053.pdf)")
 		(tags "fuse")
-		(property "Reference" "F9"
+		(property "Reference" "F7"
 			(at 0 -1.83 0)
 			(layer "F.SilkS")
 			(uuid "906e5d3d-b839-406b-b6d1-5cd388d6cd35")
