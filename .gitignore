@@ -1,0 +1,15 @@
+# KiCad: local backups, autosave, per-user state, lock files
+*-backups/
+*.kicad_pcb-bak
+*.kicad_sch-bak
+*_autosave-*
+*.kicad_prl
+*.lck
+fp-info-cache
+
+# Editor local history (VS Code extension)
+.history/
+
+# OS
+.DS_Store
+Thumbs.db

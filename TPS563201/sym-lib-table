@@ -1,0 +1,4 @@
+(sym_lib_table
+	(version 7)
+	(lib (name "Block")(type "KiCad")(uri "${KIPRJMOD}/sym/Block.kicad_sym")(options "")(descr "Symboles du bloc TPS563201, copies de la bibliotheque MultiSensors"))
+)

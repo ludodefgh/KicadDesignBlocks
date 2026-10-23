@@ -1,0 +1,37 @@
+(version 1)
+
+# Regles personnalisees -- voir Docs/kicad-headless-lessons.md
+#
+# U4 (BH1750 WSOF-6) et U12 (SGP41 DFN-6) sont des empreintes custom dont les
+# pads sont espaces de 0,100 mm et 0,025 mm. La contrainte globale de 0,2 mm les
+# declare en faute alors que c'est la geometrie du boitier : 7 violations DRC
+# permanentes, et le routeur refuse d'entrer dans les pads.
+#
+# Ces regles ne "cachent" pas le probleme de fond -- la validation des deux
+# empreintes contre les land patterns fabricants reste l'issue #13. Elles
+# permettent seulement au DRC et au routeur de travailler en attendant.
+
+(rule "BH1750 pas fin - clearance interne"
+	(constraint clearance (min 0.09mm))
+	(condition "A.memberOfFootprint('U4') && B.memberOfFootprint('U4')"))
+
+(rule "SGP41 pas fin - clearance interne"
+	(constraint clearance (min 0.02mm))
+	(condition "A.memberOfFootprint('U12') && B.memberOfFootprint('U12')"))
+
+# U8 (TPS63070, RNM0015A) : les barres 9 / 10 / 11 sont au pas de 0,5 mm avec
+# 0,35 mm de cuivre -- 0,15 mm d'ecart, c'est le land pattern TI lui-meme
+# (SLVSC58B p.40, pads definis par le masque). Pas un defaut de placement.
+(rule "TPS63070 barres HotRod - clearance interne"
+	(constraint clearance (min 0.15mm))
+	(condition "A.memberOfFootprint('U8') && B.memberOfFootprint('U8')"))
+
+# Classe Power (2026-10-21, revue independante #30) : la largeur des rails
+# n'etait imposee qu'a freerouting via le DSN ; KiCad ne la verifiait pas et
+# 18,5 mm de +5V a 0,12 mm passaient le DRC. Minimum 0,4 mm partout, SAUF dans
+# le courtyard des boitiers a pas fin, ou le retrecissement a l'entree du pad
+# est legitime (QFN 0,5 mm, SOT-23-6, USB-C).
+(rule "Power : largeur mini hors pads fins"
+	(layer outer)
+	(condition "A.NetClass == 'Power' && !A.intersectsCourtyard('U8') && !A.intersectsCourtyard('U9') && !A.intersectsCourtyard('U10') && !A.intersectsCourtyard('U11') && !A.intersectsCourtyard('J3')")
+	(constraint track_width (min 0.4mm)))
