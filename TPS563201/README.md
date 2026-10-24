@@ -1,7 +1,7 @@
 # TPS563201 buck block: 5 V → 3.3 V / 1 A
 
 A self-contained KiCad 10 project with just the TPS563201 and its passives, as laid
-out in the [MultiSensors](https://github.com/ludodefgh/MultiSensors) sensor node. It
+out in the MultiSensors sensor node (a private repository). It
 exists so the power stage can be reviewed on its own, without the rest of the board.
 
 ![3D top view](docs/TPS563201-3d-top.png)

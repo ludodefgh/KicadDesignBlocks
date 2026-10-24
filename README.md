@@ -6,7 +6,7 @@ example for an external review.
 
 | Block | What it is | Status |
 |---|---|---|
-| [`TPS563201/`](TPS563201/) | Buck 5 V → 3.3 V / 1 A, TI TPS563201, 4 layers. Generated from the [MultiSensors](https://github.com/ludodefgh/MultiSensors) board | layout done, not fabricated |
+| [`TPS563201/`](TPS563201/) | Buck 5 V → 3.3 V / 1 A, TI TPS563201, 4 layers. Generated from the MultiSensors board (private repository) | layout done, not fabricated |
 | [`TPS5430Buck/`](TPS5430Buck/) | Power input + buck based on the TI TPS5430: screw-terminal input, polyfuses (schematic note: "5/12/24V Power In") | earlier stand-alone project, history imported from the former `TPS5430Buck` repo |
 
 ## Conventions
