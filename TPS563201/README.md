@@ -66,8 +66,8 @@ exists so the power stage can be reviewed on its own, without the rest of the bo
 1. **SW copper on B.Cu.** It faces the +3.3 V plane at about 0.2 mm. It is about
    5 mm², which estimates to about 1 pF onto a heavily decoupled plane. The
    alternative is to move it onto In2, cut into the 3.3 V plane.
-2. **Bootstrap path.** C4 picks up SW from the island, through a trace that runs
-   about 5 mm over U11 on F.Cu.
+2. **Bootstrap path.** C4 sits between L1 and U11 and picks up SW from L1's SW pad
+   on F.Cu: about 1.3 mm of trace between the two pad edges, over the GND plane.
 3. **Feedback sense.** R5 measures the output through a via into the +3.3 V plane,
    not through a dedicated trace from the output capacitors (TI rule 6). R6 returns
    to GND through its own via, not a Kelvin connection to U11 pin 1 (rule 7).
