@@ -2,23 +2,8 @@
 
 # Regles personnalisees -- voir Docs/kicad-headless-lessons.md
 #
-# U4 (BH1750 WSOF-6) et U12 (SGP41 DFN-6) sont des empreintes custom dont les
-# pads sont espaces de 0,100 mm et 0,025 mm. La contrainte globale de 0,2 mm les
-# declare en faute alors que c'est la geometrie du boitier : 7 violations DRC
-# permanentes, et le routeur refuse d'entrer dans les pads.
-#
-# Ces regles ne "cachent" pas le probleme de fond -- la validation des deux
-# empreintes contre les land patterns fabricants reste l'issue #13. Elles
-# permettent seulement au DRC et au routeur de travailler en attendant.
-
-(rule "BH1750 pas fin - clearance interne"
-	(constraint clearance (min 0.09mm))
-	(condition "A.memberOfFootprint('U4') && B.memberOfFootprint('U4')"))
-
-(rule "SGP41 pas fin - clearance interne"
-	(constraint clearance (min 0.02mm))
-	(condition "A.memberOfFootprint('U12') && B.memberOfFootprint('U12')"))
-
+# U4 (BH1750) : regle d'exception 0,09 mm supprimee le 2026-11-10 -- pastilles
+# refaites (0,3 mm, 0,2 mm entre elles).
 # U8 (TPS63070, RNM0015A) : les barres 9 / 10 / 11 sont au pas de 0,5 mm avec
 # 0,35 mm de cuivre -- 0,15 mm d'ecart, c'est le land pattern TI lui-meme
 # (SLVSC58B p.40, pads definis par le masque). Pas un defaut de placement.
@@ -35,3 +20,24 @@
 	(layer outer)
 	(condition "A.NetClass == 'Power' && !A.intersectsCourtyard('U8') && !A.intersectsCourtyard('U9') && !A.intersectsCourtyard('U10') && !A.intersectsCourtyard('U11') && !A.intersectsCourtyard('J3')")
 	(constraint track_width (min 0.4mm)))
+
+# Regles d'assemblage reprises de PlantSensor/myco-mini-host-pcb (2026-11-10).
+# Assemblage a la main au hotplate : marge au bord de carte et entre composants.
+# Exclus de la regle de bord : composants places au bord par necessite
+# (J1, J3, J5, J6, U6, U1 : connecteurs, et U1 dont l'antenne doit etre au bord de carte).
+(rule "Courtyard au bord de carte (dessus, marge hotplate)"
+	(layer "F.CrtYd")
+	(constraint physical_clearance (min 1mm))
+	(condition "B.Layer == 'Edge.Cuts' && A.Reference != 'J1' && A.Reference != 'J3' && A.Reference != 'J5' && A.Reference != 'J6' && A.Reference != 'U6' && A.Reference != 'U1'"))
+
+(rule "Courtyard au bord de carte (dessous, marge hotplate)"
+	(layer "B.CrtYd")
+	(constraint physical_clearance (min 1mm))
+	(condition "B.Layer == 'Edge.Cuts' && A.Reference != 'J1' && A.Reference != 'J3' && A.Reference != 'J5' && A.Reference != 'J6' && A.Reference != 'U6' && A.Reference != 'U1'"))
+
+# Bloc U11 (TPS563201) : paires internes exemptees -- TI SLVSD90B 7.4.1 veut les
+# condensateurs "as close to the device as possible" ; le serrage est voulu.
+# Les ecarts entre le bloc et le reste de la carte restent controles.
+(rule "Courtyard a courtyard (assemblage a la main)"
+	(constraint courtyard_clearance (min 0.5mm))
+	(condition "!((A.Reference == 'U11' || A.Reference == 'L1' || A.Reference == 'C4' || A.Reference == 'C5' || A.Reference == 'C6' || A.Reference == 'C7' || A.Reference == 'C8' || A.Reference == 'C9' || A.Reference == 'R5' || A.Reference == 'R6') && (B.Reference == 'U11' || B.Reference == 'L1' || B.Reference == 'C4' || B.Reference == 'C5' || B.Reference == 'C6' || B.Reference == 'C7' || B.Reference == 'C8' || B.Reference == 'C9' || B.Reference == 'R5' || B.Reference == 'R6'))"))

@@ -243,7 +243,7 @@
       "internal_id": "",
       "mfg": "",
       "mpn": "",
-      "sch_revision": ""
+      "sch_revision": "proto"
     },
     "layer_pairs": [],
     "layer_presets": [],
@@ -472,6 +472,7 @@
       "pin_to_pin": "warning",
       "power_pin_not_driven": "error",
       "same_local_global_label": "warning",
+      "same_local_global_power": "warning",
       "similar_label_and_power": "warning",
       "similar_labels": "warning",
       "similar_power": "warning",
@@ -705,7 +706,7 @@
         "uuid": "00000000-0000-0000-0000-000000000000"
       }
     ],
-    "used_designators": "",
+    "used_designators": "U5A1",
     "variants": []
   },
   "sheets": [

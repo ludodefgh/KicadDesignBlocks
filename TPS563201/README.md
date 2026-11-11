@@ -33,8 +33,9 @@ exists so the power stage can be reviewed on its own, without the rest of the bo
 | C5, C6 | Samsung CL21A106KAYNNNE, 0805 | 10 µF 25 V X5R (input) | C15850 |
 | C7 | 0805 | 100 nF (input, high-frequency) | |
 | C8, C9 | Samsung CL21A226MAQNNNE, 0805 | 22 µF 25 V X5R (output) | C45783 |
-| C4 | Samsung CL05B104KO5NNNC, 0402 | 100 nF (bootstrap) | C1525 |
-| R5, R6 | 0402, 1 % | 33.2 k / 10.0 k (feedback) | |
+| C4 | Yageo CC0603KRX7R9BB104, 0603 | 100 nF 50 V X7R (bootstrap) | C14663 |
+| R5 | UNI-ROYAL 0603WAF3322T5E, 0603 | 33.2 k 1 % (feedback, upper) | C23003 |
+| R6 | UNI-ROYAL 0603WAF1002T5E, 0603 | 10.0 k 1 % (feedback, lower) | C25804 |
 
 - **L1**: at 4.75–5.25 V in, the ripple is 0.52–0.64 A peak-to-peak, so the inductor
   peaks at about 1.3 A at 1 A out.
@@ -43,6 +44,8 @@ exists so the power stage can be reviewed on its own, without the rest of the bo
   replacement CL21A226MAYNNN (C602037) gives about 27.4 µF.
 - **C7**: optional in TI's Table 7-2, kept because the TPS563201EVM-715 fits it (C1)
   and WEBENCH reserves a spot for it.
+- **No 0402**: every passive is 0603 or larger, for hand assembly on a hot plate.
+  R5 and R6 are pinned to 1 % parts, as TI asks for the divider (§7.2.2.2).
 
 ## Board and layout
 
@@ -59,15 +62,18 @@ exists so the power stage can be reviewed on its own, without the rest of the bo
     pin 1.
   - The feedback divider sits on the quiet side of U11, away from L1 and SW.
 - Design rules come from MultiSensors: 0.15 mm clearance, 0.4 mm minimum on power
-  nets (`TPS563201.kicad_dru`).
+  nets, and hand-assembly margins (0.5 mm between courtyards, with the pairs inside
+  this block exempted because TI wants them tight) (`TPS563201.kicad_dru`).
 
 ## Where a review would help
 
 1. **SW copper on B.Cu.** It faces the +3.3 V plane at about 0.2 mm. It is about
    5 mm², which estimates to about 1 pF onto a heavily decoupled plane. The
    alternative is to move it onto In2, cut into the 3.3 V plane.
-2. **Bootstrap path.** C4 sits between L1 and U11 and picks up SW from L1's SW pad
-   on F.Cu: about 1.3 mm of trace between the two pad edges, over the GND plane.
+2. **Bootstrap path.** C4 stands upright to the right of L1, above U11 pin 6. VBST
+   reaches it with a 0.6 mm trace, about 1 mm between the two pad edges. Its SW pad
+   picks up SW from L1's SW pad on F.Cu: about 1.6 mm of trace between the two pad
+   edges, over the GND plane.
 3. **Feedback sense.** R5 measures the output through a via into the +3.3 V plane,
    not through a dedicated trace from the output capacitors (TI rule 6). R6 returns
    to GND through its own via, not a Kelvin connection to U11 pin 1 (rule 7).
@@ -78,7 +84,9 @@ exists so the power stage can be reviewed on its own, without the rest of the bo
 
 Not fabricated, not measured. The schematic passes ERC (one warning: the +5V net has
 both a power symbol and a label, as in the full board). The PCB passes DRC with 0
-errors, 0 unconnected items and 0 schematic/PCB mismatches.
+errors, 0 unconnected items and 0 schematic/PCB mismatches. Three silkscreen warnings
+remain: the C8, C9 and L1 labels are clipped by this block's cut-out outline, which
+is not an edge in the full board.
 
 ## Source
 
