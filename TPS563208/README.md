@@ -4,16 +4,17 @@ A self-contained KiCad 10 project with just the TPS563208 and its passives, as l
 out in the MultiSensors sensor node (a private repository). It
 exists so the power stage can be reviewed on its own, without the rest of the board.
 
-The folder and files keep the name `TPS563201`: the block started with that part and
-switched to the TPS563208 (same package, pinout and passives) in November 2026.
+The block started with the TPS563201 (folder `TPS563201/` until November 2026) and
+switched to the TPS563208: same datasheet (SLVSD90), package, pinout and passives.
+The schematic symbol is still named `TPS563201` for that reason.
 
-![3D top view](docs/TPS563201-3d-top.png)
+![3D top view](docs/TPS563208-3d-top.png)
 
 | File | What it is |
 |---|---|
-| `TPS563201.kicad_pro` / `.kicad_sch` / `.kicad_pcb` | the project (open the `.kicad_pro`) |
-| `docs/TPS563201-schematic.pdf` | schematic, readable without KiCad |
-| `docs/TPS563201-layout.svg` | F.Cu, B.Cu, silkscreen and outline, readable without KiCad |
+| `TPS563208.kicad_pro` / `.kicad_sch` / `.kicad_pcb` | the project (open the `.kicad_pro`) |
+| `docs/TPS563208-schematic.pdf` | schematic, readable without KiCad |
+| `docs/TPS563208-layout.svg` | F.Cu, B.Cu, silkscreen and outline, readable without KiCad |
 | `docs/webench/` | TI WEBENCH exports the part values came from (BOM CSV, layout images) |
 | `sym/Block.kicad_sym` | project-local symbols, so the project opens on any machine |
 
@@ -73,7 +74,7 @@ switched to the TPS563208 (same package, pinout and passives) in November 2026.
   - The feedback divider sits on the quiet side of U11, away from L1 and SW.
 - Design rules come from MultiSensors: 0.15 mm clearance, 0.4 mm minimum on power
   nets, and hand-assembly margins (0.5 mm between courtyards, with the pairs inside
-  this block exempted because TI wants them tight) (`TPS563201.kicad_dru`).
+  this block exempted because TI wants them tight) (`TPS563208.kicad_dru`).
 
 ## Where a review would help
 
@@ -102,7 +103,7 @@ schematic/PCB mismatches.
 ## Source
 
 This project is **generated** from MultiSensors with
-`kicad/_generators/export_tps563201_block.py <this folder>`. The script takes values,
+`kicad/_generators/export_tps563208_block.py <this folder>`. The script takes values,
 footprints and MPN/LCSC fields from the MultiSensors schematic, and the layout from
 the user's hand-drawn U11 group in the MultiSensors board. Change the block in
 MultiSensors and re-export; edits made only here are lost at the next export.

@@ -501,7 +501,7 @@
     "pinned_symbol_libs": []
   },
   "meta": {
-    "filename": "TPS563201.kicad_pro",
+    "filename": "TPS563208.kicad_pro",
     "version": 3
   },
   "net_settings": {
@@ -719,8 +719,8 @@
     "subpart_id_separator": 0,
     "top_level_sheets": [
       {
-        "filename": "TPS563201.kicad_sch",
-        "name": "TPS563201",
+        "filename": "TPS563208.kicad_sch",
+        "name": "TPS563208",
         "uuid": "00000000-0000-0000-0000-000000000000"
       }
     ],
