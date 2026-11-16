@@ -70,7 +70,16 @@
         }
       },
       "diff_pair_dimensions": [],
-      "drc_exclusions": [],
+      "drc_exclusions": [
+        [
+          "silk_edge_clearance|100000000|151830000|b27ac567-75e7-446c-98dd-50e67c08660d|2077714a-9a7b-4873-9d87-892086055e4f",
+          ""
+        ],
+        [
+          "silk_edge_clearance|100000000|161230000|b27ac567-75e7-446c-98dd-50e67c08660d|69ac330c-e2e6-4837-9e16-fe6754463714",
+          ""
+        ]
+      ],
       "meta": {
         "version": 2
       },
@@ -498,20 +507,24 @@
   "net_settings": {
     "classes": [
       {
+        "bus_width": 12,
         "clearance": 0.15,
         "microvia_diameter": 0.3,
         "microvia_drill": 0.1,
         "name": "Default",
         "pcb_color": "rgba(0, 0, 0, 0.000)",
-        "priority": -1,
+        "priority": 2147483647,
         "schematic_color": "rgba(0, 0, 0, 0.000)",
         "track_width": 0.2,
         "tuning_profile": "",
         "via_diameter": 0.6,
-        "via_drill": 0.3
+        "via_drill": 0.3,
+        "wire_width": 6
       },
       {
+        "bus_width": 12,
         "clearance": 0.15,
+        "line_style": 0,
         "microvia_diameter": 0.3,
         "microvia_drill": 0.1,
         "name": "Power",
@@ -521,7 +534,8 @@
         "track_width": 0.6,
         "tuning_profile": "",
         "via_diameter": 0.6,
-        "via_drill": 0.3
+        "via_drill": 0.3,
+        "wire_width": 6
       }
     ],
     "meta": {
@@ -553,6 +567,10 @@
       {
         "netclass": "Power",
         "pattern": "/U8_L2"
+      },
+      {
+        "netclass": "Power",
+        "pattern": "/VBUS"
       }
     ]
   },
@@ -706,7 +724,7 @@
         "uuid": "00000000-0000-0000-0000-000000000000"
       }
     ],
-    "used_designators": "U5A1",
+    "used_designators": "#FLG2,#FLG4,#PWR12,#PWR45,#PWR48,#PWR74,#PWR79,#PWR92-94,#PWR107,#PWR114-115,#PWR127,#PWR129,#PWR133,C17,D1,D3,J1,Q1,R16-19,R32,SW1,TP3-5,U2,U5A1",
     "variants": []
   },
   "sheets": [
