@@ -183,7 +183,7 @@
 			)
 		)
 		(property ki_fp_filters "Choke_* *Coil* Inductor_* L_*")
-		(path "/b2073681-728c-4639-af9d-79252dd54cee")
+		(path "/7c3b08c0-7db6-40d5-87e2-3232c80e20d2")
 		(sheetname "/")
 		(sheetfile "TPS563208.kicad_sch")
 		(units
@@ -479,7 +479,7 @@
 			)
 		)
 		(property ki_fp_filters "R_*")
-		(path "/dc4e7ea3-bc6e-4c96-a55a-cec9066c06d4")
+		(path "/9f8bb409-a1bb-4eb8-8ac1-4b9c27c112a5")
 		(sheetname "/")
 		(sheetfile "TPS563208.kicad_sch")
 		(units
@@ -664,7 +664,7 @@
 			)
 		)
 		(property ki_fp_filters "C_*")
-		(path "/5ec7ddf1-a7d1-4038-bdef-2abe1b70d560")
+		(path "/71825040-bd60-474b-8604-1cd7b1ac571d")
 		(sheetname "/")
 		(sheetfile "TPS563208.kicad_sch")
 		(units
@@ -850,7 +850,7 @@
 			)
 		)
 		(property ki_fp_filters "C_*")
-		(path "/799db644-bfc1-4f3f-b728-a8888923d6c7")
+		(path "/3209448f-e3c9-47ec-9efc-cb4e03516495")
 		(sheetname "/")
 		(sheetfile "TPS563208.kicad_sch")
 		(units
@@ -1035,7 +1035,7 @@
 			)
 		)
 		(property ki_fp_filters "R_*")
-		(path "/a70bc53a-b97a-42c5-803e-0e54173c3278")
+		(path "/5230b578-d0b3-4445-8b59-2feadb52b68f")
 		(sheetname "/")
 		(sheetfile "TPS563208.kicad_sch")
 		(units
@@ -1221,7 +1221,7 @@
 			)
 		)
 		(property ki_fp_filters "C_*")
-		(path "/30837e80-6e6a-43ec-b25c-6e24adf8cec8")
+		(path "/5cd8708a-1290-41c4-896e-6567d556bab8")
 		(sheetname "/")
 		(sheetfile "TPS563208.kicad_sch")
 		(units
@@ -1407,7 +1407,7 @@
 			)
 		)
 		(property ki_fp_filters "C_*")
-		(path "/93472b0e-1869-45f6-b1ee-5da0c53d355e")
+		(path "/0a06b630-91cf-4b92-bc64-bad95986fe6d")
 		(sheetname "/")
 		(sheetfile "TPS563208.kicad_sch")
 		(units
@@ -1593,7 +1593,7 @@
 			)
 		)
 		(property ki_fp_filters "C_*")
-		(path "/adba6364-c8fe-4543-9710-6d4c0eaa02a5")
+		(path "/b939eacf-dfa0-473f-a7eb-e17fc9b77b56")
 		(sheetname "/")
 		(sheetfile "TPS563208.kicad_sch")
 		(units
@@ -1779,7 +1779,7 @@
 			)
 		)
 		(property ki_fp_filters "SOT?23*")
-		(path "/a25e95a0-fa4a-47a0-9b37-58a7ab4e6eea")
+		(path "/665fc479-9325-40c9-bf4d-775331f77eb7")
 		(sheetname "/")
 		(sheetfile "TPS563208.kicad_sch")
 		(units
@@ -2169,7 +2169,7 @@
 			)
 		)
 		(property ki_fp_filters "C_*")
-		(path "/34f5b3b6-399b-432a-a4ac-e34d09f670f2")
+		(path "/63c9bf04-8bb3-4ee8-8bd1-d03ebd439cab")
 		(sheetname "/")
 		(sheetfile "TPS563208.kicad_sch")
 		(units
@@ -2273,7 +2273,7 @@
 		)
 		(fill no)
 		(layer "Edge.Cuts")
-		(uuid "648b08e0-d6a1-4730-af08-6e0d6f180d9a")
+		(uuid "d99211e7-36b2-47d0-a4a9-f1c0c2f3a7cf")
 	)
 	(segment
 		(start 132.534248 155.8892)

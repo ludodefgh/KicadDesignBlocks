@@ -103,7 +103,8 @@ schematic/PCB mismatches.
 ## Source
 
 This project is **generated** from MultiSensors with
-`kicad/_generators/export_tps563208_block.py <this folder>`. The script takes values,
-footprints and MPN/LCSC fields from the MultiSensors schematic, and the layout from
-the user's hand-drawn U11 group in the MultiSensors board. Change the block in
+`kicad/_generators/export_tps563208_block.py <this folder>`. The schematic is the U11
+section of the MultiSensors schematic, copied as drawn (plus PWR_FLAGs on +5V and GND,
+which live in the USB-C section there). The layout is the hand-drawn U11 group of the
+MultiSensors board. Change the block in
 MultiSensors and re-export; edits made only here are lost at the next export.
